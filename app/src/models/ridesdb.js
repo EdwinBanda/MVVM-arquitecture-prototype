@@ -1,22 +1,28 @@
-let mockRides = [
+let mockedRides = [
     {
         id: 1,
         origin: "isutc",
-        destination: "Home",
-        date: "06/01/2001"
-        },
+        destination: "home",
+        date: "02-15-2024"
+    },
     {
         id: 2,
         origin: "isutc",
-        destination: "Zimpas",
-        date: "06/01/2001"
-        },
+        destination: "home",
+        date: "02-15-2024"
+    },
     {
         id: 3,
         origin: "isutc",
-        destination: "Museu",
-        date: "06/01/2001"
-        }
+        destination: "home",
+        date: "02-07-2024"
+    },
+    {
+        id: 4,
+        origin: "isutc",
+        destination: "home",
+        date: "02-05-2024"
+    }
 ]
 
 const isValidRide = (ride)=>{
@@ -25,26 +31,22 @@ const isValidRide = (ride)=>{
 }
 
 const addRide = (newRide)=>{
-    if(isValidRide(newRide)){
-        newRide.id = mockRides.length + 1
-        mockRides.push(newRide)
-    }else{
-        throw new Error("Dados invalidos")
-    }
+
+    newRide.id = mockedRides.length + 1
+    mockedRides.push(newRide)
 }
 
-const cleanMockRides = ()=>{
-    mockRides = mockRides.filter(isValidRide)
+const cleanmockedRides = ()=>{
+    mockedRides = mockedRides.filter(isValidRide)
 }
 
 const deleteRide = (id)=>{
-    
-    if(mockRides){
-        mockRides = mockRides.filter(ride => ride.id !== id)
+    if(mockedRides){
+        mockedRides = mockedRides.filter(ride => ride.id !== id)
     }
 }
 
-module.exports = mockRides
+module.exports = mockedRides
 module.exports = addRide
 module.exports = deleteRide
-module.exports = cleanMockRides
+
